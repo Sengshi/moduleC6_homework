@@ -1,0 +1,59 @@
+.input{
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+  box-shadow: none;
+  font-size: 15px;
+}
+
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  margin: 1px 3px;
+  padding: 10px 15px;
+  border-radius: 1px;
+  line-height: 15px;
+  color: black;
+  background: #BAD7EC;
+}
+
+
+.btn_text {
+  margin-right: 10px;
+}
+
+.message{
+  width:222px;
+  border: 2px solid #BAD7EC;
+  cursor: text;
+  margin: 3px 3px;
+  padding: 3px 3px;
+  border-radius: 1px;
+  line-height: 25px;
+}
+
+#chatbox {
+  margin:3px;
+  margin-bottom:25px;
+  margin-top: 10px;
+  padding:10px;
+  background:#fff;
+  height:270px;
+  width:430px;
+  border:2px solid #BAD7EC;
+  overflow:auto; 
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.message-window{
+  border: 2px solid #BAD7EC;
+  margin: 3px 3px;
+  padding: 10px 10px;
+  border-radius: 10px;
+
+}
