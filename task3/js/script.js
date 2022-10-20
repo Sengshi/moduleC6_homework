@@ -3,10 +3,8 @@
     const sendBtn = document.querySelector('.j-btn-send');
     const textWindow = document.getElementById('chatbox');
     const geoBtn = document.querySelector('.j-btn-geo');
-    
     const placeholder = 'Здесь вводится текст сообщения';
-    
-    // создаем объект вебсокет и описываем его поведение
+
     let websocket = new WebSocket(wsUri); 
     
     websocket.onopen = function(evt) {
@@ -22,7 +20,6 @@
       addMessage(evt.data, 'flex-start');
     };
     
-    //добавляем обработчик события при нажатии кнопки отправки сообщения
     sendBtn.addEventListener('click', () => {
         let message = messageInput.value;
         websocket.send(message);
@@ -30,7 +27,6 @@
         messageInput.value = ''
     })
     
-    //функция для добавления сообщений в чат
     function addMessage(message, position='flex-end') {
         let element = `
             <p class='message-window' style='align-self: ${position}'>
@@ -41,8 +37,6 @@
         textWindow.innerHTML = chat + element;
     }
     
-    
-    //описываем поведение при определении гео-позиции
     const error = () => {
         let error = "Позиция не может быть определена" 
         addMessage(error);
@@ -56,8 +50,6 @@
         addLink(link)
     }
     
-    
-    //функция для вставки ссылки в чат
     function addLink(link) {
         let element = `
         <a  href='${link}'
@@ -72,8 +64,6 @@
         textWindow.innerHTML = chat + element;
     };
     
-    
-    //добавляем обработчик события при нажатии кнопки гео-позиции
     geoBtn.addEventListener('click', () => {
         if (!navigator.geolocation) {
             console.log("You can't use geolocation")
